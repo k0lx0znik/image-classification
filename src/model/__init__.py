@@ -1,4 +1,3 @@
-from src.model.baseline_model import BaselineModel
-from src.model.resnet import ResNetModel
+from src.model.baseline_model import ReiAyanami
 
-__all__ = ["BaselineModel", "ResNetModel"]
+__all__ = ["ReiAyanami"]
