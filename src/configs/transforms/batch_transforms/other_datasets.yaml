@@ -1,0 +1,43 @@
+train:
+  img:
+    _target_: torch.nn.Sequential
+    _args_:
+      - _target_: torchvision.transforms.v2.ConvertImageDtype
+        dtype: torch.float32
+      - _target_: torchvision.transforms.v2.RandomApply
+        _args_:
+          transforms:
+            - _target_: torch.nn.Sequential
+              _args_:
+                - _target_: torchvision.transforms.v2.Resize
+                  size: [44, 44]
+                  antialias: true
+                - _target_: torchvision.transforms.v2.RandomCrop
+                  size: [40, 40]
+        p: 0.2
+      - _target_: torchvision.transforms.v2.RandomHorizontalFlip
+        p: 0.25
+      - _target_: torchvision.transforms.v2.RandomRotation
+        degrees: 10
+      - _target_: torchvision.transforms.v2.RandomAffine
+        degrees: 10
+      - _target_: torchvision.transforms.v2.ColorJitter
+        brightness: 0.1
+        contrast: 0.1
+        saturation: 0.1
+        hue: 0.05
+      - _target_: torchvision.transforms.v2.RandomAutocontrast
+        p: 0.25
+      - _target_: torchvision.transforms.v2.Normalize
+        mean: [0.5, 0.5, 0.5]
+        std: [0.5, 0.5, 0.5]
+
+inference:
+  img:
+    _target_: torch.nn.Sequential
+    _args_:
+      - _target_: torchvision.transforms.v2.ConvertImageDtype
+        dtype: torch.float32
+      - _target_: torchvision.transforms.v2.Normalize
+        mean: [0.5, 0.5, 0.5]
+        std: [0.5, 0.5, 0.5]
