@@ -11,7 +11,7 @@
 
 ## About
 
-This in an example usage of a [PyTorch Project Template](https://github.com/Blinorot/pytorch_project_template). The task is to do image classification. We use [MNIST](https://yann.lecun.com/exdb/mnist/) and [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) datasets. In addition, this project may be used for any tasks, where is need to classify small images such as 40x40 or 50x50.
+The task is to do image classification. We use [MNIST](https://yann.lecun.com/exdb/mnist/) and [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) datasets. In addition, this project may be used for any tasks, where is need to classify small images such as 40x40 or 50x50.
 
 ## Installation
 
